@@ -3,7 +3,7 @@
 </div>
 
 <br />
-Xilinx&reg; Vitis&trade; AI 是一套用于在 Xilinx 硬件平台上部署人工智能网络的工具栈。 目前，用于部署 Vitis AI 硬件平台包括 Xilinx 的移动端芯片（例如：ZCU102/104） 和 Alveo 加速计算卡。
+Xilinx&reg; Vitis&trade; AI 是一套用于在 Xilinx 硬件平台上部署人工智能网络的工具栈。 目前，用于部署 Vitis AI 硬件平台包括 Xilinx 的边缘设备芯片（例如：ZCU102/104） 和 Alveo 加速计算卡。
 
 
 
@@ -24,7 +24,7 @@ Vitis AI 的关键的组件：
 * **AI Quantizer** - 一个强大的量化器，支持模型量化、校准和微调。由于FPGA上运行AI模型需要使用定点型，因此如果用户想要设计核修改自己的模型，就需要使用这个工具，来量化自己的模型。
 * **AI Compiler** - Vitis AI的编译器。将量化模型编译为高效的指令集和数据流。实际的工作把具体的AI模型转化成DPU可以跑的指令流。
 * **AI Profiler** - Vitis AI 的分析工具，主要配合Vitis开发平台使用。用于深入分析人工智能网络的效率和利用率。
-* **AI Library** - 一个高层次的C++ API库，主要用于具体云端和移动端的AI应用的开发。
+* **AI Library** - 一个高层次的C++ API库，主要用于具体云端和边缘设备的AI应用的开发。
 * **DPU** - DPU 即 Deep Learning Processor Unit 深度学习处理单元，一个高效的可扩展的软IP。用户可以根据不同的应用的需要来修改和定制这个IP核。
 
 **了解更多:** [Vitis AI 官网介绍](https://www.xilinx.com/products/design-tools/vitis/vitis-ai.html)  
@@ -154,7 +154,7 @@ sudo chown vitis-ai-user:vitis-ai-group ~/.Xauthority
 
 ## 2 使用Vitis AI编程
 
-Vitis AI 提供了一组统一的高级 C++/Python 编程 API，用于移动端到云端的跨平台的 AI 应用程序，包括用于 Alveo 的 DPU，以及用于 Zynq Ultrascale+ MPSoC 和 Zynq-7000 的 DPU。使用Vitis AI可以轻松地将 AI 应用程序从云端移植到边缘，反之亦然。
+Vitis AI 提供了一组统一的高级 C++/Python 编程 API，用于边缘设备到云端的跨平台的 AI 应用程序，包括用于 Alveo 的 DPU，以及用于 Zynq Ultrascale+ MPSoC 和 Zynq-7000 的 DPU。使用Vitis AI可以轻松地将 AI 应用程序从云端移植到边缘设备，反之亦然。
 [VART Samples](demo/VART)中的10个示例可以帮助您熟悉未定义的编程API。
 
 | ID | Example Name          | Models              | Framework  | Notes                                                                     |
