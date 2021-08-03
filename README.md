@@ -43,9 +43,10 @@ Vitis AI 的关键的组件：
 - DPUCAHX8H (DPUv3E) and DPUCAHX8L (DPUv3ME) release with xo
 - Classification & Detection WAA examples for Versal (VCK190)
 
-## 准备开始
+## 1 准备开始
 
 目前有两种方式来安装用于运行Vitis AI的 Docker 容器。
+
 - 直接运行预先搭建好的的容器： [xilinx/vitis-ai](https://hub.docker.com/r/xilinx/vitis-ai/tags)
 - 本地根据Docker recipes来新建一个容器：[Docker Recipes](setup/docker)
 
@@ -57,7 +58,9 @@ Vitis AI 的关键的组件：
 
 
 
-### 安装
+### 1.1 安装Docker环境和Vitis AI
+#### 基础环境的配置
+
  - [安装Docker](docs/quick-start/install/install_docker/README.md) - 如果没有安装Docker需要先安装Docker
 
  - [解决Docker需要sudo执行的问题](https://docs.docker.com/install/linux/linux-postinstall/)
@@ -75,7 +78,7 @@ Vitis AI 的关键的组件：
 
 **注2:** 中国境内如果因为网络问题导致git没速度，可以使用下载压缩包解压到本地的方式来运行
 
-#### 使用预先配置好的Vitis AI镜像文件
+#### 使用预先配置好的Vitis AI镜像文件来运行Docker环境 （仅支持CPU）
 
 使用以下命令下载Vitis AI的Docker镜像。注意该命令下载的是CPU版本。
 ```
@@ -86,9 +89,9 @@ docker pull xilinx/vitis-ai-cpu:latest
 ```
 ./docker_run.sh xilinx/vitis-ai-cpu:latest
 ```
-#### 通过Recipe（开发环境配置清单）来搭建Docker环境
+#### 通过开发环境配置清单来脚本化创建一个全新的Docker环境 （支持CPU 和 GPU）
 
-Xilinx一共提供了两个版本的recipe：CPU 版本 和 GPU 版本。如果你有合适的N卡（亮机卡用不了）和CUDA支持可以选择GPU recipe，否则请选择 CPU recipe 方式。
+Xilinx一共提供了两个版本配置清单可供选择：CPU版本和GPU版本。如果你有合适的N卡并且支持CUDA可以选择GPU版本，否则请选择CPU版本。
 
 **CPU Docker**
 
@@ -115,7 +118,7 @@ cd setup/docker
 **./docker_run.sh** 这个脚本是一个参考脚本，用户可以根据需要自行修改这个脚本来实现自己需要的功能。
 
 
-### 在Docker中安装补丁和更新
+### 1.2 在Docker中安装补丁和更新
 
 你可以用下面的方法在 Conda 环境中安装 Anaconda packages： 
 
@@ -144,12 +147,12 @@ sudo chown vitis-ai-user:vitis-ai-group ~/.Xauthority
 
 请注意，在运行此脚本之前，如果您使用基于 Windows 的 ssh 终端连接到远程服务器，请确保您有本地 X11 服务器正在运行，或者如果您使用的时Linux桌面版，你需要在命令窗口运行**xhost +** 命令。 在windows下使用ssh连接到远程服务器时，如果你用的是GUI工具，你需要在工具中启用 *X11转发* 或者类似选项，如果你用的是命令行，你需要加上 *-X* 参数。
 
- ### 从例程入门Vitis AI
+ ### 1.3 从例程入门Vitis AI
   - [VART](demo/VART/README.md) 
   - [Vitis AI Library](demo/Vitis-AI-Library/README.md)
 
 
-## 使用Vitis AI编程
+## 2 使用Vitis AI编程
 
 Vitis AI 提供了一组统一的高级 C++/Python 编程 API，用于移动端到云端的跨平台的 AI 应用程序，包括用于 Alveo 的 DPU，以及用于 Zynq Ultrascale+ MPSoC 和 Zynq-7000 的 DPU。使用Vitis AI可以轻松地将 AI 应用程序从云端移植到边缘，反之亦然。
 [VART Samples](demo/VART)中的10个示例可以帮助您熟悉未定义的编程API。
@@ -170,7 +173,7 @@ Vitis AI 提供了一组统一的高级 C++/Python 编程 API，用于移动端�
 更多教程, 请参考 [Vitis AI User Guide](https://www.xilinx.com/html_docs/vitis_ai/1_4/index.html)
 
 
-## 参考资料
+## 3 参考资料
 - [Vitis AI Overview](https://www.xilinx.com/products/design-tools/vitis/vitis-ai.html)
 - [Vitis AI User Guide](https://www.xilinx.com/html_docs/vitis_ai/1_4/index.html)
 - [Vitis AI Model Zoo with Performance & Accuracy Data](models/AI-Model-Zoo)
