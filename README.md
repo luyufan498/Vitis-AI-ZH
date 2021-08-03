@@ -52,8 +52,8 @@ Vitis AI 的关键的组件：
 **注：**
 **Docker**，如果是第一次接触Docker可以简单理解为一个轻量化的虚拟化技术，用于隔离宿主机的运行环境。
 **Docker Image**，镜像，类似于虚拟机中的镜像，或者一个WIN中的还原点。
-**Container**，容器，可以理解为运行中的虚拟机。需要注意容器和镜像是不同的东西，类似于基于一个镜像可以创建很多个虚拟机，一个Image可以创建多个contrainer。
-因此从Docker网站上下载的是一个 Viti AI 的镜像，所有的Vitis AI的环境已经安装好了，我们运行这个镜像就会产生一个容器，这个容器相当于一个正在运行的Ubuntu系统，我们只需要进入这个系统的环境就能够使用Vitis AI的各种工具了。使用Docker可以避免繁琐的环境配置过程。关于Docker的严谨解释请参考官网：https://docs.docker.com/get-started/overview/
+**Container**，容器，可以理解为运行中的虚拟机。需要注意容器和镜像是不同的东西，类似于基于一个镜像可以创建很多个虚拟机，一个Image也可以创建多个contrainer。
+从Docker Hub网站上下载的是一个 Viti AI 的镜像，在这个镜像内的Vitis AI的环境已经被配置好了，我们只需要运行这个镜像就会产生一个容器，这个容器相当于一个正在运行的Ubuntu系统，我们就可以进入这个系统的环境使用Vitis AI的各种工具了。使用Docker可以避免繁琐的环境配置过程。关于Docker的严谨解释请参考官网：https://docs.docker.com/get-started/overview/
 
 
 
